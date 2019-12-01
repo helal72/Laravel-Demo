@@ -17,7 +17,7 @@ class NewsletterController extends Controller
     public function store(Request $request){
     	$this->NewsletterFormValidation($request->all());
 
-    	$email =$request->email;
+    	$email = $request->email;
     	$username = strstr($email, '@', true);
     	\Mail::to($request->email)->send(new newsletterMail($username));
 

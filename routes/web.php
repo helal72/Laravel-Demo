@@ -1,4 +1,11 @@
 <?php
+
+//Admin Routing
+Route::namespace('Admin')->group(function () {
+    Route::get('admin', 'homeController@index')->name('admin.home');
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +25,6 @@ Route::post('/companies/{id}' , 'companyController@delete')->name('company.delet
 Route::get('/newsletter' , 'NewsletterController@show')->name('newsletter');
 Route::post('/newsletter' , 'NewsletterController@store');
 //yf7d865rd
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
