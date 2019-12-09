@@ -2,7 +2,8 @@
 
 //Admin Routing
 Route::namespace('Admin')->group(function () {
-    Route::get('admin', 'homeController@index')->name('admin.home');
+    Route::get('backend', 'homeController@index')->name('admin.home');
+    Route::resource('backend/category' , 'categoryController');
 });
 
 
