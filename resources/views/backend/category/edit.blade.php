@@ -21,7 +21,7 @@
           
           
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="isActive" value="1">
+            <input type="checkbox" class="form-check-input" name="isActive" value="1" {{$category->isActive == 1 ? 'checked' : ''}}>
             <label class="form-check-label" for="exampleCheck1">Publish?</label>
           </div>
         </div>
