@@ -6,8 +6,8 @@
 
 	<div class="card">
 		<div class="card-header">
-		<h3 class="card-title">Category List</h3>
-			<a href="{{ route('category.create') }}" class="fa fa-edit" style="float: right;"></a>
+		<h3 class="card-title">Add New Posts</h3>
+			<a href="{{ route('post.create') }}" class="fa fa-edit" style="float: right;"></a>
 		</div>
 				
 		<div class="card-body">
@@ -15,20 +15,24 @@
 		<thead>
 			<tr>
 				<th>No</th>
-				<th>Name</th>
+				<th>Title</th>
+				<th>User</th>
+				<th>Created</th>
 				<th>Status</th>
 				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($categories as $category)
+			@foreach ($posts as $post)
 			<tr>
 				<td>{{$loop->index +1}}</td>
-				<td>{{$category->name}}</td>
-				<td>{{$category->isActive == 1 ? 'active' : 'inactive'}}</td>
+				<td>{{$post->title}}</td>
+				<td>Helal Khan</td>
+				<td>{{ $post->created_at->diffForHumans() }}</td>
+				<td>{{$post->isActive == 1 ? 'active' : 'inactive'}}</td>
 				<td>
-					<a href="{{ route('category.edit' ,$category->id) }}" class="fa fa-edit"></a> |
-					 <a href="{{route('category.destroy', $category->id)}}" class="fa fa-trash"></a>
+					<a href="{{ route('post.edit' ,$post->id) }}" class="fa fa-edit"></a> |
+					 <a href="" class="fa fa-trash"></a>
 				</td>
 			</tr>
 			@endforeach

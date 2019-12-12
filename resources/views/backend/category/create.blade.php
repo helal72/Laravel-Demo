@@ -4,7 +4,7 @@
 
 <div class="card">
 	<div class="card-header">
-	<h3 class="card-title">Category List</h3>
+	<h3 class="card-title">Insert Category</h3>
 		</div>
 		<!-- /.card-header -->
 	<div class="card-body">
@@ -27,7 +27,7 @@
         <!-- /.card-body -->
 
         <div class="card-footer">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-danger">Submit</button>
         </div>
       </form>
 </div>

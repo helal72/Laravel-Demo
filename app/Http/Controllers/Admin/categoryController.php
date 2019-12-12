@@ -48,7 +48,7 @@ class categoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'required | unique:categories'
+            'name'=>'required '
          ]);
          \App\Model\User\Category::where('id',$id)->update([
             'name'=>$request->name,
@@ -62,6 +62,11 @@ class categoryController extends Controller
 
     public function destroy($id)
     {
-        //
+       //$category = \App\Model\User\Category::find($id);
+        \App\Model\User\Category::where('id',$id)->delete();
+        \Session::flash('message','Category Deleted Successfully');
+        
+        return redirect()->back();
+
     }
 }
