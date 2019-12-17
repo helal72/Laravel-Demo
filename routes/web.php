@@ -6,7 +6,15 @@ Route::namespace('Admin')->group(function () {
     Route::resource('backend/category' , 'categoryController');
     Route::resource('backend/post' , 'postController');
 
+    Route::get('backend/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+    Route::post('backend/login', 'Auth\LoginController@login');
+    Route::post('backend/logout', 'Auth\LoginController@logout')->name('admin.logout');
+
 });
+
+// Route::get('backend/login', function(){
+// 	return view('backend/login');
+// 	});
 
 
 Route::get('/', function () {

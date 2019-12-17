@@ -9,7 +9,7 @@
           <img src="User/img/helal.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Helal Khan</a>
+          <a href="#" class="d-block">{{auth()->user()->name}}</a>
         </div>
       </div>
 
@@ -81,7 +81,20 @@
                   <p>Add User</p>
                 </a>
               </li>
+
             </ul>
+          </li>
+
+          <li>
+            <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">
+            <i class="fa fa-user"></i>
+              Logout
+            </a>
+
+           <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+               {{ csrf_field() }}
+           </form>
+
           </li>
          
         </ul>
