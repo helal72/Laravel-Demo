@@ -33,8 +33,8 @@ Route::get('/company' , 'companyController@showCompanyForm')->name('company.add'
 Route::post('/addcompany' , 'companyController@addCompany')->name('company.store');
 Route::post('/companies/{id}' , 'companyController@delete')->name('company.delete');
 
-Route::get('/newsletter' , 'NewsletterController@show')->name('newsletter');
-Route::post('/newsletter' , 'NewsletterController@store');
+//Route::get('/newsletter' , 'NewsletterController@show')->name('newsletter');
+Route::post('/newsletter' , 'NewsletterController@store')->name('newsletter');
 //yf7d865rd
 Auth::routes();
 

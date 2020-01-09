@@ -20,7 +20,7 @@
             <a class="nav-link" href="{{URL::to('contact')}}">Contact</a>
           </li>
           <li class="nav-item {{Request::path('/newsletter') ? 'active' : ''}}">
-            <a class="nav-link" href="{{ route('newsletter') }}">Newsletter</a>
+            <a href="" data-toggle="modal" data-target="#newsletter">Newsletter</a>
           </li>
         </ul>
       </div>
